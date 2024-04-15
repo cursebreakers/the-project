@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  div.statusBar
+    div.statusHead
+      a.uname(href=`/${userName}`) #{userName}
+      button.statUpdate(type="button" onclick="window.location.href='/status';") Update Status
+    div.dashTray
+      div.message
+        h3= message
+      div.statusLoc
+        h2 #{userStatus}
+        p #{userTime}
+        p #{userLoc}
+        p #{userIP}
+        p #{userAgent}
+
+  

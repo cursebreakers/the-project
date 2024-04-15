@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  div.results
+    h2 Hmm...
+    p #{message}
+    br
+    a.cancel(href=`/`) Exit
+
+  script(src="/javascripts/scripts.js", defer)

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div.authTray
+    h1.authHeader #{title}
+    
+    form.auth_form(action='/auth', method='POST')
+      label(for='username') Username:
+      input(type='text', id='username', name='username', required)
+
+      label(for='password') Password:
+      input(type='password', id='password', name='password', required)
+      if errorMessage
+        p.error= errorMessage
+      button(type='submit') Log in
+    a.signUp(type='button' href=`/auth/new`) Sign up

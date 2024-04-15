@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= userData.username
+  div.profile
+    h2 #{userData.status}
+
+  script(src="/javascripts/scripts.js", defer)

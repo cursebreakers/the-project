@@ -1,0 +1,249 @@
+* {
+  background-color: #111;
+  color: aquamarine;
+  font-family: 'dmsans';
+  font-size: 16px;
+}
+@font-face {
+  font-family: 'dmsans';
+  src: url(../font/dmsans.ttf);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  flex: 1;
+  padding: 12px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+font-size: 18px;
+font-weight: 500;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.authTray {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.authHeader {
+  text-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+.auth_form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 2px ridge aquamarine;
+  border-radius: 1px;
+}
+
+.auth_form > label {
+  padding: 8px;
+  font-weight: 600
+}
+
+.auth_form > input {
+  margin: 12px;
+  padding: 4px;
+  background-color: azure;
+  color: #111;
+}
+
+.auth_form > p {
+  text-align: center;
+  margin: 12px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.auth_form > button {
+  margin: 12px;
+  padding: 8px;
+}
+
+.auth_form > button:hover {
+  margin: 8px;
+  padding: 12px;
+  background-color: aquamarine;
+  color: #111;
+  font-weight: 600;
+  border: 2px ridge #111;
+  box-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+.signUp {
+  text-decoration: none;
+  padding: 24px;
+  color: azure;
+}
+
+.signUp:hover {
+  color: aquamarine;
+  text-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+.cancel {
+  color: #f721a9;
+  margin: 8px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  text-shadow: 0 0 10px rgba(255, 1, 136, 0.697), 0 0 20px rgba(255, 22, 84, 0.5), 0 0 30px rgba(255, 22, 84, 0.3);
+}
+
+.error {
+  color: #f721a9;
+  text-shadow: 0 0 10px rgba(255, 1, 136, 0.697), 0 0 20px rgba(255, 22, 84, 0.5), 0 0 30px rgba(255, 22, 84, 0.3);
+  max-width: 250px;
+}
+
+.statusBar {
+  display: flex;
+  flex-direction: column;
+}
+
+.statusHead {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+}
+
+.uname {
+  font-size: 20px;
+  text-decoration: none;
+  align-self: center;
+  color: aquamarine;
+}
+
+.uname:hover {
+  text-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+.statUpdate {
+  align-self: center;
+  text-decoration: none;
+  border: 1px ridge azure;
+  background-color: #111;
+  color: azure;
+  padding: 12px;
+  border-radius: 3px;
+  
+}
+
+.statUpdate:hover {
+  background-color: aquamarine;
+  color: #000;
+  border: 1px ridge #111;
+  padding: 12px;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+.statusLoc {
+  padding: 24px;
+}
+
+.statusLoc > p {
+  color: azure;
+  font-size: 16px;
+}
+
+.newStatusTray {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+
+.statForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid aquamarine;
+  padding: 12px;
+  width: 100%;
+}
+
+.statForm > input {
+  padding: 8px;
+  min-width: 260px;
+}
+
+.statForm > p {
+  padding: 8px;
+}
+
+.statForm > button {
+  margin: 12px;
+  background-color: #111;
+  color: azure;
+  padding: 8px;
+  width: 120px;
+}
+
+.statForm > button:hover {
+  background-color: aquamarine;
+  color: #000;
+  border: 2px ridge #111;
+  box-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+  border-radius: 2px;
+}
+
+.statForm > a {
+  padding: 8px;
+}
+
+.results {
+  padding: 50px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;;
+  padding: 12px;
+}
+
+.copyredir {
+  text-decoration: none;
+  color: azure;
+}
+
+.copyredir:hover {
+  text-decoration: none;
+  color: aquamarine;
+  text-shadow: 0 0 5px rgba(127, 255, 212, 0.7), 0 0 15px rgba(127, 255, 212, 0.5), 0 0 30px rgba(127, 255, 212, 0.3);
+}
+
+
+::selection {
+  background-color: aquamarine;
+  color: #000;  
+}
+
+moz::selection {
+  background-color: aquamarine;
+  color: #000;
+}

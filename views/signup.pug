@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  div.authTray
+    h1.authHeader #{title}:
+
+    form.auth_form(action='/auth/new', method='POST')
+      label(for='username') Username:
+      input(type='text', id='username', name='username', required)
+      if errorMessage.username
+        p.error #{errorMessage.username}
+
+      label(for='email') Email:
+      input(type='email', id='email', name='email', required)
+      if errorMessage.email
+        p.error #{errorMessage.email}
+
+      label(for='password') Password:
+      input(type='password', id='password', name='password', required)
+      if errorMessage.password
+        p.error #{errorMessage.password}
+
+      label(for='confirmPassword') Confirm Password:
+      input(type='password', id='confirmPassword', name='confirmPassword', required)
+      if errorMessage.confirmPassword
+        p.error #{errorMessage.confirmPassword}
+
+      button(type='submit') Sign up
+    
+    a.cancel(href='/') Cancel

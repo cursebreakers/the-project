@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.newStatusTray
+    h1= title
+    form.statForm(action="/status" method="POST")
+      p Status Update:
+      input(type="text" name="newStatus" placeholder="Enter new status" required)
+      button(type="submit") Update
+      a.cancel(href=`/`) Cancel
+
+
