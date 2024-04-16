@@ -11,7 +11,7 @@ const geoip = require('geoip-lite');
 const mongoose = require('mongoose');
 
 const User = require('../models/userModel')
-const AuthLog = require('../models/logModels');
+const AuthLog = require('../models/logModel');
 const Data = require('../models/dataModel')
 
 

@@ -3,17 +3,29 @@ extends layout
 block content
   h1= title
   div.statusBar
-    div.statusHead
+    div.dashHead
+      a.avtrLnk(href=`/${userName}`) 
+        img.avtr(src='/images/bit-brkr-cloud.png')
       a.uname(href=`/${userName}`) #{userName}
-      button.statUpdate(type="button" onclick="window.location.href='/status';") Update Status
+      div.statusTool
     div.dashTray
-      div.message
-        h3= message
-      div.statusLoc
-        h2 #{userStatus}
-        p #{userTime}
-        p #{userLoc}
-        p #{userIP}
-        p #{userAgent}
+      h3.userStatus= userStatus  
+      br
+      button.statUpdate(type="button" onclick="window.location.href='/status';") Update Status     
+      br
+    div.messages
+      h3= message
+      br  
+    div.statusLoc
+      h3 Session Data:
+        p.privacy This information is not made public by Cursebreakers.
+      p IP: #{userIP}
+      p #{userLoc}
+      p #{userTime}
+      p Client: #{userAgent}
 
-  
+      br
+      br
+      a.exit(href=`/auth/out`) Log out
+      br
+

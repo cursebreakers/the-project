@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h1= userData.username
   div.profile
     h2 #{userData.status}
+    p ~#{userData.username}
 
   script(src="/javascripts/scripts.js", defer)

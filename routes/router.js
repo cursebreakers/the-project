@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
   res.redirect('/dashboard');
 });
 
+
 // GET Dashboard.
 router.get('/dashboard', authControl.get_dashboard)
 
@@ -33,7 +34,11 @@ router.get('/auth/new', authControl.auth_new);
 // Route to POST user sign-up
 router.post('/auth/new', authControl.post_new);
 
+// Route to POST user logout
+router.get('/auth/out', authControl.user_out);
+
 // Route to GET user profile
+// Keep this at the bottom or else the above routes will break!
 router.get('/:username', dashControl.show_profile)
 
 

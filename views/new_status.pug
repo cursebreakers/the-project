@@ -4,9 +4,13 @@ block content
   div.newStatusTray
     h1= title
     form.statForm(action="/status" method="POST")
+      br
       p Status Update:
       input(type="text" name="newStatus" placeholder="Enter new status" required)
+      br
       button(type="submit") Update
+      br
       a.cancel(href=`/`) Cancel
+      br
 
 

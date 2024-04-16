@@ -11,7 +11,7 @@ const geoip = require('geoip-lite');
 const mongoose = require('mongoose');
 
 const User = require('../models/userModel')
-const AuthLog = require('../models/logModels');
+const AuthLog = require('../models/logModel');
 const Data = require('../models/dataModel')
 
 // Passport Local Strategy for username/password authentication
@@ -203,7 +203,7 @@ exports.post_new = [
             await authLogSignupFailed.save();
 
             // Render the form with error messages
-            return res.render('signup', { title: 'Sign-up', errorMessage, username, email });
+            return res.render('signup', { title: 'Sign-up', errorMessage, username, email, password });
         }
 
         try {
@@ -302,11 +302,24 @@ exports.get_dashboard = expressAsyncHandler(async (req, res, next) => {
     }
 });
 
+exports.user_out = (req, res, next) => {
+    // Call the logout function with a callback
+    req.logout(function(err) {
+        if (err) {
+            console.error('Error logging out:', err);
+            return next(err); // Assuming next is defined in the middleware chain
+        }
+        console.log('User logged out successfully.');
+        res.redirect('/'); // Redirect to home page after logout
+    });
+};
+
 
 module.exports = {
     auth_user: exports.auth_user,
     auth_new: exports.auth_new,
     auth_check: exports.auth_check,
     post_new: exports.post_new,
-    get_dashboard: exports.get_dashboard
+    get_dashboard: exports.get_dashboard,
+    user_out: exports.user_out
 };
