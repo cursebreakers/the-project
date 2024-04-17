@@ -4,8 +4,15 @@ block content
   h1= title
   div.statusBar
     div.dashHead
-      a.avtrLnk(href=`/${userName}`) 
-        img.avtr(src='/images/bit-brkr-cloud.png')
+
+      if avatar
+        a.avtrLnk(href=`/avatar`) 
+          svg.avtr(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 200 200')
+            != avatar
+      else
+        a.avtrLnk(href=`/avatar`) 
+          img.avtr(src='/images/bit-brkr-cloud.png')
+
       a.uname(href=`/${userName}`) #{userName}
       div.statusTool
     div.dashTray

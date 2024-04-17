@@ -11,6 +11,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const crypto = require('crypto');
 const logger = require('morgan');
+const fs = require('fs');
+const marked = require('marked');
 
 
 require('dotenv').config()
@@ -61,6 +63,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    h1= title
+
+    div.avatarSelection
+   
+      svg.newAvatar(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 200 200')
+        != svg
+
+    div.avatarTools
+      br
+      form.reGen(action='/avatar', method='GET')
+        button(type='submit') Regenerate 
+      br
+      form.conFirm(action='/avatar', method='POST')
+        input(type='hidden', name='svgData', value=svg)
+        button(type='submit') Confirm
+      br
+    br 
+    a.cancel(href=`/`) Cancel

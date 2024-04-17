@@ -1,6 +1,6 @@
 # The Project
 
-v0.1.1
+v0.1.2
 
 *A simple web application that provides users with an overview of their public IP and triangulated location info, as well as provides a minimal status update system and hosting service for links or web content.*
 
@@ -8,7 +8,21 @@ v0.1.1
 
 # Overview
 
-The Project is an experimental application in development at Cursebreakers LLC.  It is in a closed alpha as of version 0.1.1. Version 0.1.2 is being prepared for implementation as soon as it is stable.
+The Project is an experimental application in development at Cursebreakers LLC and in closed alpha as of version 0.1.2.
+
+## v0.1.2 Updates:
+
+- Dashboard and profiles:
+    - Avatar generator lets users randomly select a pattern.
+    - Avatar acts as a sharing button on profile.
+
+- Markdown rendering with markdown-it and new Docs section.
+    - Docs *(main index)*
+    - Hello World!
+    - Spin-up
+    - Terms
+    - Legal
+    - Accessibility
 
 ## Architecture & Development:
 
@@ -17,8 +31,8 @@ The Project is an experimental application in development at Cursebreakers LLC. 
 **Dashboard**
 
 - Status Bar - Where the user controls their account.
-    - Username, link to profile, and status update button
-    - Create, select and delete custom statuses to show on public page
+    - Avatar, username, link to profile, and status update button
+        - Create, select and delete custom statuses to show on public page
     - Current Status - *(Also shown on the public profile)*
 
 - Session - *This information is available from user's device and is not made public by Cursebreakers.*
@@ -26,17 +40,24 @@ The Project is an experimental application in development at Cursebreakers LLC. 
     - Public IP - *(Determined by access point)*
     - IP Location - *(Based on public IP Address)*
     - Client/User agent - *(User's device and/or browser)*
+    - Log-out button
 
 ---
 
 **Profiles**
-- Username
 - Status
-- Copyright and home button
+- Username
+- Avatar (share button)
+- Docs home button
 
-### Component Overview
+### Components Overview
+
+#### Main:
+
+- app.js
 
 #### Models:
+
 - dataModel.js
 - logModels.js
 - userModel.js
@@ -48,31 +69,48 @@ The Project is an experimental application in development at Cursebreakers LLC. 
 - profile.pug
 - new_status.pug
 - auth.pug
+- avatar.pug
 - signup.pug
 - error.pug
 - no_url.pug
 
 #### Controllers
 - auth.js
+- avatar.js
 - dash.js
 - mongo.js
+- pages.js
+
+#### Routes
+
+- router.js
+
+#### Docs
+
+- README.md
+- index.md
+- hello.md
+- spin-up.md
+- terms.md
+- legal.md
+- accessibility.md
 
 
 ---
 
 # WORKING: 
+    
+## v0.1.3-v0.1.9
 
-## v0.1.2 
-
-### Updates: *(In Progess)*
+### Future Updates: *(In Progess)*
 
 **Link hosting**
 - Live/reactive content!
     - eg: opengraph and scraped/pushed, link metadata
     - Only hosts one link at a time *(archives old links)*.
-- Link tree with buttons Hosts
-    - Multiple links!
-    - No live content *(buttons, metadata only)*.
+- Link tree with buttons 
+    - Host multiple links!
+    - No live content *(buttons w/ metadata only)*.
 
 **Improved intuitive navigation:***
 - Anchor logo in footer.
@@ -96,7 +134,7 @@ The Project is an experimental application in development at Cursebreakers LLC. 
 ---
 
 ### DevSec Concerns & Infrastructure
-
+*Checklist for open-beta*
 
 **Sign-up & Log in:**
 - Redirects and dash lock-out if not authed
@@ -114,10 +152,10 @@ The Project is an experimental application in development at Cursebreakers LLC. 
     - Implement set-value when neccessary.
     -  Read more @ [Snyk.io](https://security.snyk.io/package/npm/lodash/4.17.0)
 
-- Use HTTPS/TLS/HSTS
+- Uses HTTPS/TLS/HSTS
 
 - Session Management:
-    - Use secure and HttpOnly cookies.
+    - Uses secure and HttpOnly cookies.
     - Set appropriate session timeouts.
     - Ensure session identifiers are random/unpredictable.
 
@@ -177,16 +215,17 @@ Hosting Provider: [Glitch.com](https://glitch.com)
     - helmet v4.6.0
     - http-errors v1.6.3
     - joi v17.4.0
+    - marked v12.0.1
     - mongodb v6.5.0
-    - mongoose"v8.3.1
+    - mongoose v8.3.1
     - connect-mongodb-session v5.0.0
     - morgan v1.9.1
     - passport v0.7.x
     - passport-local v1.x
-    - pug": v3.x
+    - pug v3.x
     - request-ip v3.3.0
     - text-encoding v0.7.0
-    - url-parse": v1.5.10
+    - url-parse v1.5.10
     - utf-8-validate v5.0.2
     - winston v3.3.3
     - set-value v4.1.0

@@ -59,7 +59,8 @@ exports.show_profile = async (req, res, next) => {
         // Render the profile page with the user data
         console.log('User Profile:', userData)
 
-        res.render('profile', { title: 'Profile', userData });
+
+        res.render('profile', { title: userData.status, userData });
     } catch (error) {
         console.error('Error fetching user profile:', error);
         res.status(500).render('error', { title: 'Server Error' });
@@ -131,5 +132,5 @@ exports.post_status = [
 module.exports = {
     new_status: exports.new_status,
     post_status: exports.post_status,
-    show_profile: exports.show_profile
+    show_profile: exports.show_profile,    
 };

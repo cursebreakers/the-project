@@ -5,13 +5,14 @@ const router = express.Router();
 
 const authControl = require('../controllers/auth')
 const dashControl = require('../controllers/dash')
+const pageControl = require('../controllers/pages')
+const avatarControl = require('../controllers/avatar')
 
 /* Redirect GET at main index. */
 router.get('/', function(req, res, next) {
   console.log('User must authenticate before rendering dashboard.')
   res.redirect('/dashboard');
 });
-
 
 // GET Dashboard.
 router.get('/dashboard', authControl.get_dashboard)
@@ -36,6 +37,21 @@ router.post('/auth/new', authControl.post_new);
 
 // Route to POST user logout
 router.get('/auth/out', authControl.user_out);
+
+// Route to GET avatar generator
+router.get('/avatar', avatarControl.gen_avatar);
+
+// Route to POST new avatar
+router.post('/avatar', avatarControl.post_avatar)
+
+// Route to GET specific document
+router.get('/docs/:page', pageControl.get_docs);
+
+// Route to GET docs index
+router.get('/docs', pageControl.get_docs);
+
+// Route to GET T&C's
+router.get('/terms', pageControl.get_terms);
 
 // Route to GET user profile
 // Keep this at the bottom or else the above routes will break!

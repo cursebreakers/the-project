@@ -2,7 +2,20 @@ extends layout
 
 block content
   div.profile
-    h2 #{userData.status}
-    p ~#{userData.username}
+    div.topBlock
+      h2 #{userData.status}
 
+    div.userBar
+      p ~#{userData.username}  
+        
+    div.bottomBlock
+      br
+      br
+      a(href='javascript:void(0)', id='copyLinkBtn')
+        svg.pubAvatar(
+          xmlns='http://www.w3.org/2000/svg', 
+          viewBox='0 0 200 200',
+          style='display: block; width: 100%; height: auto;'
+        )
+          != userData.avatar
   script(src="/javascripts/scripts.js", defer)

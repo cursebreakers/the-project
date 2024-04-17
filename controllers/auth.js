@@ -14,6 +14,8 @@ const User = require('../models/userModel')
 const AuthLog = require('../models/logModel');
 const Data = require('../models/dataModel')
 
+
+
 // Passport Local Strategy for username/password authentication
 passport.use(new LocalStrategy(
     async function(username, password, done) {
@@ -295,13 +297,15 @@ exports.get_dashboard = expressAsyncHandler(async (req, res, next) => {
 
         // Render the dashboard with user data
         console.log('User authenticated. Rendering dashboard...');
-        res.render('dashboard', { title: 'Dashboard', userIP, userAgent, userLoc, userTime, userName, userStatus });
+        res.render('dashboard', { title: 'Dashboard', avatar: userData.avatar, userIP, userAgent, userLoc, userTime, userName, userStatus });
     } catch (error) {
         console.error('Error rendering dashboard:', error);
         next(error);
     }
 });
 
+
+// GET user logout
 exports.user_out = (req, res, next) => {
     // Call the logout function with a callback
     req.logout(function(err) {
