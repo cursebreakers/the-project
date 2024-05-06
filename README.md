@@ -8,7 +8,7 @@ v0.1.2
 
 # Overview
 
-The Project is an experimental application in development at Cursebreakers LLC and in closed alpha as of version 0.1.2.
+The Project is an experimental application in development at Cursebreakers LLC.
 
 ## v0.1.2 Updates:
 
